@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "ae131910-349d-41f3-a510-6e39ea34182f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2650805",
+		"_collection_link": "https://aqfactura-pe.postman.co/workspace/2d968edf-5304-42e2-8712-a4d421b5e1d4/collection/2650805-ae131910-349d-41f3-a510-6e39ea34182f?action=share&source=collection_link&creator=2650805"
+	},
+	"item": [
+		{
+			"name": "generateToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "pk_test_LsRBjdkw13aowWQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"card_number\": \"4556737586899855\",\r\n  \"cvv\": \"123\",\r\n  \"expiration_month\": \"02\",\r\n  \"expiration_year\": \"2024\",\r\n  \"email\": \"example@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/tokens",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNzE5OTFkMjJhMTJmODRjMmZlMDRiYjdhZjcxZmRmODllZDg5MzFkNmI0MWZkMmVmMDg0OWE5YjM5ZGIxY2Y4MmQzNWJkMTUzODkzMjEwMTJmYThhNzgzNTExZTMzMWQ3MDY2NjM1NTk3ZGFlODA1ODU2ZWJhMGEzMGE0NTI5YzE4NDc0OTRhZjZhMGU3Y2Q1NmE3OGFlZjY3ZmRmNzFlZjNlYWUzN2Y5MWI0NGYwNTM2YzhmNjhkOWQ0ODJkODg4YjhlNjQ1MjViMTc4NDJkNjk1YWM1M2VhOGFiMTBlMzA1ZTEzNTcxMjNjZjYzYTRhZjgzYmYwZjQyMzU4OWQ1OSIsImlhdCI6MTcwODU3MTU2MCwiZXhwIjoxNzA4NjU3OTYwfQ.kmYHas31FEVxMeBp46WvqAY5NrFp2LjKUfpRpkDQTE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "pk_test_LsRBjdkw13aowWQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/cards",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

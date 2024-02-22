@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-culqi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-culqi
+  template:
+    metadata:
+      labels:
+        app: demo-culqi
+    spec:
+      containers:
+      - name: demo-culqi
+        image: public.ecr.aws/d5d5p5r5/demo-culqi-repo:latest
+        ports:
+          - containerPort: 3000
